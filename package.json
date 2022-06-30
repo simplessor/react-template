@@ -3,12 +3,40 @@
   "version": "1.0.0",
   "description": "React模板",
   "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
     "url": "http://192.168.1.16:13000/yongx/react-template.git"
   },
-  "keywords": ["react", "template"],
+  "keywords": [
+    "react",
+    "template"
+  ],
   "author": "simplessor",
-  "license": "GPL3.0"
+  "license": "GPL3.0",
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "@types/react-router-dom": "^5.3.3",
+    "css-loader": "^6.7.1",
+    "fork-ts-checker-webpack-plugin": "^7.2.11",
+    "html-webpack-plugin": "^5.5.0",
+    "less": "^4.1.3",
+    "less-loader": "^11.0.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.7.3",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0"
+  }
 }
