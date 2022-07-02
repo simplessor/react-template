@@ -1,21 +1,19 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useState } from "react";
 import { FC } from "react";
+import { useLogger } from './hook/use-logger';
+
+const latestDateString = () => new Date().toLocaleString();
 
 export const App: FC = () => {
-  const [text, setText] = useState<string>('init');
+  useLogger({ name: App.name });
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setText(new Date().toLocaleString());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
+  const [text, setText] = useState<string>(latestDateString());
 
   return (
-    <span>
-      {text}
-    </span>
+    <>
+      <span>{text}</span>
+      <button onClick={() => setText(latestDateString())}>Refresh</button>
+    </>
   );
 };
