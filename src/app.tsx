@@ -1,6 +1,4 @@
-import { useCallback, useEffect } from "react";
-import { useState } from "react";
-import { FC } from "react";
+import { FC, useState } from 'react';
 import { useLogger } from './hook/use-logger';
 
 const latestDateString = () => new Date().toLocaleString();

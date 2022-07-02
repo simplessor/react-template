@@ -8,7 +8,7 @@ const WebpackConfig = {
   output: {
     filename: 'index.[contenthash].js',
     path: resolve('dist'),
-    clean: true
+    clean: true,
   },
   module: {
     rules: [
@@ -19,11 +19,11 @@ const WebpackConfig = {
           {
             loader: 'css-loader',
             options: {
-              modules: false
-            }
+              modules: false,
+            },
           },
-          'less-loader'
-        ]
+          'less-loader',
+        ],
       },
       {
         test: /\.tsx?$/,
@@ -31,12 +31,12 @@ const WebpackConfig = {
           {
             loader: 'ts-loader',
             options: {
-              transpileOnly: true
-            }
-          }
-        ]
-      }
-    ]
+              transpileOnly: true,
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -46,15 +46,13 @@ const WebpackConfig = {
       hash: true,
       cache: true,
       inject: true,
-      minify: 'auto'
+      minify: 'auto',
     }),
   ],
   resolve: {
     extensions: ['.json', '.js', '.ts', '.tsx'],
-    alias: {
-    }
+    alias: {},
   },
-
-}
+};
 
 module.exports = WebpackConfig;
