@@ -1,6 +1,7 @@
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const { DefinePlugin } = require('webpack');
 
 module.exports = merge(common, {
   mode: 'development',
@@ -14,9 +15,12 @@ module.exports = merge(common, {
     historyApiFallback: true,
     hot: true,
     https: false,
-    open: true,
+    open: false,
   },
   plugins: [
     new ForkTsCheckerWebpackPlugin(),
+    new DefinePlugin({
+      __REACT_DEVTOOLS_GLOBAL_HOOK__: '({ isDisabled: true })'
+    }),
   ]
 });
