@@ -9,9 +9,7 @@ module.exports = merge(common, {
   devServer: {
     compress: true,
     port: 10000,
-    allowedHosts: [
-      'localhost'
-    ],
+    allowedHosts: ['localhost'],
     historyApiFallback: true,
     hot: true,
     https: false,
@@ -20,7 +18,7 @@ module.exports = merge(common, {
   plugins: [
     new ForkTsCheckerWebpackPlugin(),
     new DefinePlugin({
-      __REACT_DEVTOOLS_GLOBAL_HOOK__: '({ isDisabled: true })'
+      __REACT_DEVTOOLS_GLOBAL_HOOK__: '({ isDisabled: true })',
     }),
-  ]
+  ],
 });
