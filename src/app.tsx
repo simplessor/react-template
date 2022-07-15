@@ -1,20 +1,21 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { useLogger } from './hook/use-logger';
-import { useSum } from './hook/use-sum';
+import { useUserInfo } from './hook/use-user-info';
 
 export const App: FC = () => {
   useLogger({ name: App.name });
-  const t1 = useSum(10);
-  const t2 = useSum(0);
-  const t3 = useSum(20);
-  const t4 = useSum(30);
+  const user1 = useUserInfo('simplessor', 'test');
+  const user2 = useUserInfo('xy', 'test');
+  const user3 = useUserInfo('sqwe', 'test');
+
+  const [n, setN] = useState<number>(0);
 
   return (
     <>
-      <p>{t1}</p>
-      <p>{t2}</p>
-      <p>{t3}</p>
-      <p>{t4}</p>
+      <p>{user1}</p>
+      <p>{user2}</p>
+      <p>{user3}</p>
+      <button onClick={() => setN((p) => p + 1)}>{n}</button>
     </>
   );
 };
